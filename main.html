@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>노무현 기일 계산기</title>
+    <link href="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F150D130F4A1B6D7FAB"
+          rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Noto Sans KR", sans-serif;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" type="text/javascript"></script>
+    <script>
+        function SetDeathTime() {
+            const deathTime = moment("2009-5-23 6:40");
+            const diffTime = moment.duration(moment().diff(deathTime));
+
+            document.getElementsByTagName("h1")[0].innerText = `노무현 대통령이 사망한지 ${diffTime.years()}년 ${diffTime.months()}월 ${diffTime.days()}일 ${diffTime.minutes()}분 ${diffTime.seconds()}초가 지났습니다.`;
+        }
+
+        window.onload = function() {
+            SetDeathTime();
+
+            setInterval(function()
+            {
+                SetDeathTime();
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+<div style="text-align: center;">
+    <img height="600"
+         src="https://ncache.ilbe.com/files/attach/new/20150321/377678/3454101149/5506925276/d4b3e98953f7028ca26b203e6125b56e.jpg"
+         width="500">
+    <h1></h1>
+    <h4>해당 사이트는 특정인을 비하할 생각이 있습니다.</br>개발자: <a href="https://github.com/green1052" target="_sub">green1052</a></h4>
+</div>
+</body>
+</html>
